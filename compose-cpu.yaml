@@ -1,0 +1,10 @@
+services:
+  ubuntu:
+    image: ubuntu-stress
+    container_name: ubuntu
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+    cpuset: '1'
+    command: 'stress -c 2'

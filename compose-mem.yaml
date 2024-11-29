@@ -1,0 +1,11 @@
+services:
+  ubuntu:
+    image: ubuntu-stress
+    container_name: ubuntu
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: '128M'
+    cpuset: '1'
+    command: 'sleep infinity'

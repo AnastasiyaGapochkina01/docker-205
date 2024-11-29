@@ -1,0 +1,9 @@
+services:
+  nginx:
+    image: nginx
+    deploy:
+      replicas: 2
+    ports:
+      - :80
+
+  

@@ -1,0 +1,26 @@
+docker build -t ubuntu-stress .
+docker run -d -it --name ubuntu ubuntu-stress stress -c 2
+docker run -d -it --cpuset-cpus=1 --name ubuntu ubuntu-stress stress -c 2
+docker compose up -d
+stress-ng --vm 1 --vm-bytes 512M
+
+docker network ls
+docker stats
+docker inspect -f '{{ range .NetworkSettings.Networks }}{{.MacAddress}}{{end}}' ubuntu-ubuntu-1
+docker inspect -f '{{ range .NetworkSettings.Networks }}{{.IPAddress}}{{end}}' ubuntu-ubuntu-2
+
+docker network create --subnet=192.168.1.0/24 nginx
+docker network ls
+docker run -d -it --name nginx --network nginx nginx
+docker inspect nginx
+curl
+ip addr show
+
+id
+unshare -U /bin/bash
+id
+---
+id
+unshare --user --map-user=anestesia --mount-proc --pid --fork
+id
+

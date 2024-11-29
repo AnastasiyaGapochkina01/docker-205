@@ -1,0 +1,6 @@
+services:
+  ubuntu:
+    image: ubuntu-stress
+    deploy:
+      replicas: 3
+    command: 'sleep infinity'
